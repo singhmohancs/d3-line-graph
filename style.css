@@ -1,0 +1,243 @@
+body {
+  background: #bbf4eb;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  font-family: 'Nunito', sans-serif;
+}
+
+.js-report-sparkline {
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.js-report-sparkline * {
+  box-sizing: border-box;
+}
+
+.js-report-sparkline path {
+  stroke-width: 16;
+  fill: none;
+}
+
+.js-report-sparkline .point.end {
+  opacity: 1;
+}
+
+.team-1,
+.team-2 {
+  position: fixed;
+  left: 80px;
+  display: flex;
+}
+
+.team-1 {
+  top: 75px;
+}
+
+.team-2 {
+  bottom: 75px;
+}
+
+.team-2 .team-info:after {
+  background: #8cb535;
+}
+
+.team-heading {
+  text-align: center;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  font-size: 70px;
+  font-weight: 600;
+  height: 100%;
+  color: #fff;
+  padding: 0px 30px;
+  letter-spacing: 1px;
+}
+
+.team-info {
+  height: 85px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  margin-right: 24px;
+}
+
+.team-info:after {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 38px;
+  height: 100%;
+  right: -9px;
+  top: 0;
+  z-index: -1;
+  background: #d64743;
+  -ms-transform: skew(-30deg, 0deg);
+  -webkit-transform: skew(-30deg, 0deg);
+  transform: skew(18deg, 0deg) translateX(13%);
+}
+
+.bg-light-green {
+  background-color: #8cb535;
+}
+
+.bg-gray {
+  background-color: #4a4a4a;
+}
+
+.bg-orange {
+  background-color: #d64743;
+}
+
+.clip-color {
+  width: 10px;
+  height: auto;
+  z-index: 99999;
+  -webkit-transform: skew(20deg);
+  -moz-transform: skew(20deg);
+  -o-transform: skew(20deg);
+  transform: skew(19deg);
+}
+
+.clip-color:not(:last-child) {
+  margin-right: 15px;
+  width: 24px;
+  margin-left: 10px;
+}
+
+.js-report-sparkline * {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.sparkline-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin: 0px auto;
+  text-align: center;
+  font-size: 75px;
+  display: flex;
+  transform: translateY(-50%);
+  justify-content: center;
+}
+
+.sparkline-text {
+  display: flex;
+  align-items: center;
+  color:#1d2726;
+  background: #bbf4eb;
+  border-radius: 20px;
+}
+
+.sparklin-text h3 {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.sparkline-text-heading {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+  align-items: flex-end;
+ 
+  text-shadow: 3px 10px 8px rgb(19 29 29);
+  background: linear-gradient( 
+    45deg, rgb(27 39 38 / 77%) 50%, rgb(76 101 98) 77%, rgb(43 56 55) 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.sparkline-text .sparkline-text-heading .sparkline-date-info {
+  font-size: 40px;
+  letter-spacing: 0.5px;
+  text-shadow: 0px 1px 0px rgb(45 66 62);
+  background: linear-gradient( 
+    45deg, rgb(27 39 38) 50%, rgb(76 101 98) 77%, rgb(43 56 55) 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
+
+.sparkline-text-heading {
+  font-size: 240px;
+  font-weight: 700;
+}
+
+/* responsive */
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+  .sparkline-text-heading {
+    font-size: 100px;
+  }
+  .sparkline-text .sparkline-text-heading .sparkline-date-info {
+    font-size: 16px;
+  }
+  .sparkline-info {
+    font-size: 44px;
+  }
+  .team-info {
+    height: 50px;
+  }
+  .team-1,
+  .team-2 {
+    left: 10px;
+  }
+  .team-1 {
+    top: 45px;
+  }
+  .team-2 {
+    bottom: 45px;
+  }
+  .team-heading {
+    font-size: 25px;
+    padding: 0px 20px;
+  }
+  .clip-color:not(:last-child) {
+    margin-right: 10px;
+    width: 24px;
+    margin-left: 5px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+ 
+  .sparkline-text-heading {
+    font-size: 150px;
+  }
+  .sparkline-text .sparkline-text-heading .sparkline-date-info {
+    font-size: 20px;
+  }
+  .sparkline-info {
+    font-size: 44px;
+  }
+  .team-info {
+    height: 70px;
+  }
+  .team-1,
+  .team-2 {
+    left: 20px;
+  }
+  .team-1 {
+    top: 70px;
+  }
+  .team-2 {
+    bottom: 70px;
+  }
+  .team-heading {
+    font-size: 40px;
+    padding: 0px 20px;
+  }
+}
