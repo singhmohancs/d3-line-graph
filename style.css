@@ -171,10 +171,9 @@ body {
 
 .sparkline-text .sparkline-body .sparkline-date-info {
 	font-size: 2rem;
-  text-shadow: 1px 0px 1px rgb(19 29 29);
- 
+  text-shadow: 1px 0px 1px rgb(53 72 70);
   background: linear-gradient( 
-45deg, rgb(27 39 38 / 77%) 50%, rgb(76 101 98) 77%, rgb(43 56 55) 100%);
+45deg, rgb(20 30 30) 100%, rgb(19 29 29) 100%, rgb(43 56 55) 100%);
   padding-top: 1rem;
   -webkit-background-clip: text !important;
 	-webkit-text-fill-color: transparent;
