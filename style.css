@@ -7,6 +7,17 @@ body {
 	font-size: 1.6rem;
 }
 
+@font-face {
+  font-family: 'Calibri';
+  src: url('/fonts/Calibri-Bold.woff2') format('woff2'),
+      url('/fonts/Calibri-Bold.woff') format('woff'),
+      url('/fonts/Calibri-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 .js-report-sparkline {
 	margin: 0 auto;
 	position: relative;
@@ -123,7 +134,7 @@ body {
 	top: 50%;
 	margin: 0px auto;
 	text-align: center;
-	font-size: 12rem;
+	font-size: 13rem;
 	display: flex;
 	transform: translateY(-50%);
 	justify-content: center;
@@ -152,8 +163,9 @@ body {
     45deg, rgb(27 39 38 / 77%) 50%, rgb(76 101 98) 77%, rgb(43 56 55) 100%);
 	-webkit-background-clip: text !important;
 	-webkit-text-fill-color: transparent;
-  padding-bottom: 1.4rem;
+  padding-bottom: 1rem;
   padding-top: 1rem;
+  font-family: 'Calibri';
 }
 
 
@@ -161,7 +173,7 @@ body {
 	font-size: 2rem;
   text-shadow: 1px 1px 6px rgb(23 34 34 / 69%);
   background: linear-gradient( to right, rgb(25 37 36 / 44%) 100%, rgb(19 29 29) 100%, rgb(19 29 29) 100%);
-  padding-top: 1.4rem;
+  padding-top: 1rem;
   -webkit-background-clip: text !important;
 	-webkit-text-fill-color: transparent;
  
@@ -193,6 +205,8 @@ body {
 	.sparkline-date-info {
 		-webkit-background-clip: inherit;
 		-webkit-text-fill-color: inherit;
+    background: linear-gradient( 
+      45deg, rgb(27 39 38) 50%, rgb(76 101 98) 77%, rgb(43 56 55) 100%);
 	
 		text-shadow: none !important;
 	}
