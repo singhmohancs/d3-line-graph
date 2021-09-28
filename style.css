@@ -171,8 +171,10 @@ body {
 
 .sparkline-text .sparkline-body .sparkline-date-info {
 	font-size: 2rem;
-  text-shadow: 1px 1px 6px rgb(23 34 34 / 69%);
-  background: linear-gradient( to right, rgb(25 37 36 / 77%) 100%, rgb(19 29 29) 100%, rgb(19 29 29) 100%);
+  text-shadow: 1px 0px 1px rgb(19 29 29);
+ 
+  background: linear-gradient( 
+45deg, rgb(27 39 38 / 77%) 50%, rgb(76 101 98) 77%, rgb(43 56 55) 100%);
   padding-top: 1rem;
   -webkit-background-clip: text !important;
 	-webkit-text-fill-color: transparent;
@@ -207,14 +209,14 @@ body {
 	}
 	.sparkline-body,
 	.sparkline-date-info {
-		-webkit-background-clip: inherit;
-		-webkit-text-fill-color: inherit;
-   
+		-webkit-background-clip: inherit !important;
+		-webkit-text-fill-color: inherit !important;
+   background:none !important;
 	
 		text-shadow: none !important;
 	}
 	.sparkline-date-info {
-		font-size: 1.5rem !important;
+	
     padding-top: 0.6rem !important;
 	}
 	.team-1 {
