@@ -172,7 +172,7 @@ body {
 .sparkline-text .sparkline-body .sparkline-date-info {
 	font-size: 2rem;
   text-shadow: 1px 1px 6px rgb(23 34 34 / 69%);
-  background: linear-gradient( to right, rgb(25 37 36 / 44%) 100%, rgb(19 29 29) 100%, rgb(19 29 29) 100%);
+  background: linear-gradient( to right, rgb(25 37 36 / 77%) 100%, rgb(19 29 29) 100%, rgb(19 29 29) 100%);
   padding-top: 1rem;
   -webkit-background-clip: text !important;
 	-webkit-text-fill-color: transparent;
@@ -198,6 +198,10 @@ body {
 	html {
 		font-size: 62.5%;
 	}
+  .sparkline-text {
+ 
+    border-radius: 0;
+  }
 	.sparkline-info {
 		font-size: 8rem;
 	}
@@ -205,8 +209,7 @@ body {
 	.sparkline-date-info {
 		-webkit-background-clip: inherit;
 		-webkit-text-fill-color: inherit;
-    background: linear-gradient( 
-      45deg, rgb(27 39 38) 50%, rgb(76 101 98) 77%, rgb(43 56 55) 100%);
+   
 	
 		text-shadow: none !important;
 	}
