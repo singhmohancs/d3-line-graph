@@ -4,7 +4,7 @@ const puppeteer = require('puppeteer');
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto('http://127.0.0.1:8125');
-  await page.screenshot({ path: 'example.png' });
+  await page.screenshot({ path: 'example.jpg',fullPage : true, quality: 100 });
 
   await browser.close();
 })();
