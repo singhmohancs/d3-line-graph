@@ -142,6 +142,9 @@ body {
 	align-items: center;
 	background: #bbf4eb;
 	border-radius: 2.8125rem;
+	padding:1rem 0.5rem ;
+
+	
 }
 
 .sparklin-text h3 {
@@ -154,15 +157,14 @@ body {
 
 .sparkline-body {
 	display: flex;
-	line-height: 0.8;
+	line-height: 0.7;
   text-shadow: 3px 10px 8px rgb(19 29 29);
   background: linear-gradient( 
     45deg, rgb(27 39 38 / 77%) 50%, rgb(76 101 98) 77%, rgb(43 56 55) 100%);
 	-webkit-background-clip: text !important;
 	-webkit-text-fill-color: transparent;
 	background-clip: text !important;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
+ 
   font-family: 'Calibri';
 }
 
@@ -177,6 +179,7 @@ body {
 	-webkit-text-fill-color: transparent;
 	display: flex;
     justify-content: flex-end;
+	line-height: normal;
 	
  
  
@@ -226,6 +229,7 @@ body {
 	.sparkline-body {
 		padding: 	0.625rem 0 ;
 		margin: 0 !important;
+	    line-height: 4rem;
 	}
 	.sparkline-text {
 	
@@ -238,6 +242,11 @@ body {
 	.sparkline-info {
 		font-size: 10rem;
 	}
+	.sparkline-body {
+		padding: 0;
+		margin: 0 !important;
+	    line-height: 7rem;
+	}
 }
 
 
@@ -245,7 +254,7 @@ body {
 	.sparkline-text {
 	
 		border-radius:0;
-		padding: 0px 40px;
+		padding: 0px 30px;
 	}
 
 }
