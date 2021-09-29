@@ -1,4 +1,4 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function () {
 
   fetch("data.json")
   .then(response => response.json())
@@ -12,11 +12,14 @@ $(document).ready(function() {
     
     let dateString = moment(date).format('MMMM Do, YYYY');
     document.querySelector('#teamOneTitle').innerText = teamOne.name;
-    document.querySelector('#teamOne').style.backgroundColor = teamOne.primaryColor;
+    document.querySelector('#teamOne').style.backgroundColor = teamOne.primaryColor; 
+    document.querySelector('#teamOnebg').style.backgroundColor = teamOne.primaryColor;
     document.querySelector('#teamOneClip').style.backgroundColor = teamOne.secondaryColor;
+   
 
     document.querySelector('#teamTwoTitle').innerText = teamTwo.name;
     document.querySelector('#teamTwo').style.backgroundColor = teamTwo.primaryColor;
+    document.querySelector('#teamTwobg').style.backgroundColor = teamTwo.primaryColor;
     document.querySelector('#teamTwoClip').style.backgroundColor = teamTwo.secondaryColor;
 
     document.querySelector('#body').style.backgroundColor = backgroundColor;
