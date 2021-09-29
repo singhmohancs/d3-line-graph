@@ -141,7 +141,7 @@ body {
 	display: flex;
 	align-items: center;
 	background: #bbf4eb;
-	border-radius: 45px;
+	border-radius: 2.8125rem;
 }
 
 .sparklin-text h3 {
@@ -175,6 +175,8 @@ body {
   -webkit-background-clip: text !important;
   background-clip: text !important;
 	-webkit-text-fill-color: transparent;
+	display: flex;
+    justify-content: flex-end;
 	
  
  
@@ -184,7 +186,7 @@ body {
 .sparkline-report-info {
 	display: flex;
 	flex-direction: column;
-  align-items: flex-start;
+ 
 }
 
 .sparkline-body,
@@ -200,7 +202,7 @@ body {
 		font-size: 62.5%;
 	}
 	.sparkline-info {
-		font-size: 8rem;
+		font-size: 6rem;
 	}
 	.sparkline-body,
 	.sparkline-date-info {
@@ -212,7 +214,7 @@ body {
 		text-shadow: none !important;
 	}
 	.sparkline-date-info {
-		font-size: 1.5rem !important;
+		font-size: 1.2rem !important;
     padding-top: 0.6rem !important;
 	}
 	.team-1 {
@@ -222,8 +224,13 @@ body {
 		bottom: 3rem;
 	}
 	.sparkline-body {
-		padding: 10px 0 ;
+		padding: 	0.625rem 0 ;
 		margin: 0 !important;
+	}
+	.sparkline-text {
+	
+		border-radius:0;
+		padding: 0px 10px;
 	}
 }
 
@@ -233,6 +240,14 @@ body {
 	}
 }
 
+@media only screen and (min-width: 414px) and (max-width: 736px) {
+	.sparkline-text {
+	
+		border-radius:0;
+		padding: 0px 40px;
+	}
+
+}
 @media only screen and (min-width: 320px) and (max-width: 991px) {
 	.team-1,
 	.team-2 {
