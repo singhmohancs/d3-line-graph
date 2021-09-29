@@ -173,7 +173,7 @@ body {
 	font-size: 2rem;
   text-shadow: 1px 1px 6px rgb(23 34 34 / 69%);
   background: linear-gradient( to right, rgb(25 37 36 / 44%) 100%, rgb(19 29 29) 100%, rgb(19 29 29) 100%);
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   -webkit-background-clip: text !important;
   background-clip: text !important;
 	-webkit-text-fill-color: transparent;
