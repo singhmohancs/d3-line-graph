@@ -3,12 +3,14 @@ $(document).ready(function() {
   fetch("data.json")
   .then(response => response.json())
   .then(json => {
-    drawGraph(json.data);
+    drawGraph(json);
     setGraphSettings(json);
   });
 
   function setGraphSettings(data) {
-    const {date, teamOne, teamTwo, backgroundColor} = data;
+    const {date, teamOne, teamTwo, backgroundColor, moneyLine} = data;
+    
+    let dateString = moment(date).format('MMMM Do, YYYY');
     document.querySelector('#teamOneTitle').innerText = teamOne.name;
     document.querySelector('#teamOne').style.backgroundColor = teamOne.primaryColor;
     document.querySelector('#teamOneClip').style.backgroundColor = teamOne.secondaryColor;
@@ -16,16 +18,21 @@ $(document).ready(function() {
     document.querySelector('#teamTwoTitle').innerText = teamTwo.name;
     document.querySelector('#teamTwo').style.backgroundColor = teamTwo.primaryColor;
     document.querySelector('#teamTwoClip').style.backgroundColor = teamTwo.secondaryColor;
+
+    document.querySelector('#body').style.backgroundColor = backgroundColor;
+    document.querySelector('.sparkline-text').style.backgroundColor = backgroundColor;
+    document.querySelector('#moneyLine').innerHTML = `${moneyLine}<div class="sparkline-date-info" id="dateString">${dateString}</div>`;
   }
 
 
 
-function drawGraph(data) {
-  
+function drawGraph(jsonData) {
+  let {teamOne, teamTwo, data } = jsonData;
+
 
 // Metric
-var vis;
-var d = moment('2021-09-10');
+let vis;
+let d = moment('2021-09-10');
 
 
 
@@ -37,20 +44,18 @@ data = data.map((item)=>{
   return {value, date};
 });
 
-$('.js-report-sparkline').each(function(sparklineId) {
+
     
-  
-  	const th = $(this);
+    const element = document.querySelector('.js-report-sparkline');
+    
     const parseDate = d3.time.format("%Y-%m-%d %H:%M:%S");
     data.forEach(function(d) {
       d.date = parseDate.parse(d.date);
       d.value = +d.value;
   });
 
-  console.log(data);
-
-    const w = th.width();
-    const h = th.height();
+    const w = element.offsetWidth;
+    const h = element.offsetHeight;
 
     const xMargin = 130;
     const yMargin = 75;
@@ -63,22 +68,23 @@ $('.js-report-sparkline').each(function(sparklineId) {
                     .range([xMargin, w - xMargin]);
 
     const gradientY = d3.scale.linear()
-                            .domain([0,30, 40,100]) .range(['#D74844','#8DB636']);
+                            .domain([0,30, 40,100]) .range([teamOne.primaryColor,teamTwo.primaryColor]);
     const percentageMargin = 100 / data.length;
     const percentageX = d3.scale.linear()
                               .domain([0, data.length - 1])
                               .range([percentageMargin, 100 - percentageMargin]);
 
-    const container = d3.select(this).append("div");
+    const container = d3.select(element).append("div");
 
-    const vis = container
+   vis = container
             .append("svg:svg")
             .attr("width", w)
             .attr("height", h);
 
     const  g = vis.append("svg:g")
-                .attr("stroke", "url(#sparkline-gradient-" + sparklineId + ")")
-                .attr("fill", "url(#sparkline-gradient-" + sparklineId + ")");
+                .attr("stroke", "url(#sparkline-gradient)")
+                .attr("fill", "url(#sparkline-gradient)")
+                .attr('filter', "url(#dropshadow)");
           
 
     const area = d3.svg.area()
@@ -110,9 +116,15 @@ $('.js-report-sparkline').each(function(sparklineId) {
  
    // attach gradient to line
     const defs = vis.append("svg:defs");
+    
+    addDrawDropShadow(vis)
+                 
     defs.append("svg:linearGradient")
-        .attr("id", "sparkline-gradient-" + sparklineId)
-        .attr("x1", "0%").attr("y1", "0%").attr("x2", "100%").attr("y2", "0%")
+        .attr("id", "sparkline-gradient")
+        .attr("x1", "0%")
+        .attr("y1", "0%")
+        .attr("x2", "100%")
+        .attr("y2", "0%")
         .attr("gradientUnits", "userSpaceOnUse")
         .selectAll(".gradient-stop")
         .data([0,20, 40, 80])
@@ -122,8 +134,45 @@ $('.js-report-sparkline').each(function(sparklineId) {
         }).attr("style", function(d) {
             return "stop-color:" + gradientY(d) + ";stop-opacity:1";
         });
-});
 
+}
+
+function addDrawDropShadow(svg) {
+  var dropShadow = {
+    'stdDeviation': 5,
+    'dx': 0,
+    'dy': 25,
+    'slope': 0.1,
+    'type': 'linear'
+  };
+  var activeDropShadow = 'dropshadow';
+
+  var filter = svg.append('defs')
+      .append('filter')
+          .attr('id', activeDropShadow)
+          // x, y, width and height represent values in the current coordinate system that results
+          // from taking the current user coordinate system in place at the time when the
+          // <filter> element is referenced
+          // (i.e., the user coordinate system for the element referencing the <filter> element via a filter attribute).
+          .attr('filterUnits','userSpaceOnUse');
+
+  filter.append('feGaussianBlur')
+      .attr('in', 'SourceAlpha')
+      .attr('stdDeviation', parseInt(dropShadow.stdDeviation));
+
+  filter.append('feOffset')
+      .attr('dx', parseInt(dropShadow.dx))
+      .attr('dy', parseInt(dropShadow.dy));
+
+  var feComponentTransfer = filter.append('feComponentTransfer');
+  feComponentTransfer
+      .append('feFuncA')
+          .attr('type', dropShadow.type)
+          .attr('slope', parseFloat(dropShadow.slope));
+
+  var feMerge = filter.append('feMerge');
+  feMerge.append('feMergeNode');
+  feMerge.append('feMergeNode').attr('in', 'SourceGraphic');
 }
 
 });
