@@ -184,7 +184,7 @@ body {
 .sparkline-report-info {
 	display: flex;
 	flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
 }
 
 .sparkline-body,
