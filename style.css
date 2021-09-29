@@ -79,8 +79,7 @@ body {
 	margin-right: 1.5rem;
 }
 
-.team-info:after {
-	content: " ";
+.team-custom-color{
 	position: absolute;
 	display: block;
 	width: 2.375rem;
@@ -88,12 +87,25 @@ body {
 	right: -9px;
 	top: 0;
 	z-index: -1;
-	background: #d64743;
 	-ms-transform: skew(-30deg, 0deg);
 	-webkit-transform: skew(-30deg, 0deg);
 	transform: skew(18deg, 0deg) translateX(13%);
 }
 
+
+
+#teamOnebg{
+
+	background: #d64743;
+
+
+}
+#teamtwobg{
+
+	background: #8cb535;
+	
+
+}
 .bg-light-green {
 	background-color: #8cb535;
 }
@@ -163,6 +175,7 @@ body {
     45deg, rgb(27 39 38 / 77%) 50%, rgb(76 101 98) 77%, rgb(43 56 55) 100%);
 	-webkit-background-clip: text !important;
 	-webkit-text-fill-color: transparent;
+	background-clip: text !important;
   padding-bottom: 1rem;
   padding-top: 1rem;
   font-family: 'Calibri';
@@ -175,7 +188,10 @@ body {
   background: linear-gradient( to right, rgb(25 37 36 / 44%) 100%, rgb(19 29 29) 100%, rgb(19 29 29) 100%);
   padding-top: 1rem;
   -webkit-background-clip: text !important;
+  background-clip: text !important;
 	-webkit-text-fill-color: transparent;
+	
+ 
  
   
 }
