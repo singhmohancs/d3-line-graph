@@ -131,7 +131,7 @@ body {
 	top: 50%;
 	margin: 0px auto;
 	text-align: center;
-	font-size: 13rem;
+
 	display: flex;
 	transform: translateY(-50%);
 	justify-content: center;
@@ -141,8 +141,8 @@ body {
 	display: flex;
 	align-items: center;
 	background: #bbf4eb;
-    border-radius: 4rem;
-    padding:0.730rem ;
+    border-radius: 2rem;
+    padding:0.730rem 0.5rem  ;
 	
 
 	
@@ -182,15 +182,21 @@ body {
 	display: flex;
     justify-content: flex-end;
 	line-height: normal;
-    padding-top: 0.5em;
+    
   
 }
 
 .sparkline-report-info {
 	display: flex;
 	flex-direction: column;
-	line-height: 0.7em;
+	
+
  
+}
+.sparkline-report-info h1{
+	font-size: 13rem;
+	margin: 0;
+	line-height: 0.9em;
 }
 
 .sparkline-body,
@@ -209,8 +215,10 @@ body {
  
     border-radius: 0;
   }
-	.sparkline-info {
+
+	.sparkline-report-info h1{
 		font-size: 6rem;
+	
 	}
 	.sparkline-body,
 	.sparkline-date-info {
@@ -233,7 +241,7 @@ body {
 	.sparkline-body {
 		padding: 	0.625rem 0 ;
 		margin: 0 !important;
-	    line-height: 4rem;
+	    
 	}
 	.sparkline-text {
 	
@@ -243,13 +251,14 @@ body {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-	.sparkline-info {
+	.sparkline-report-info h1{
 		font-size: 10rem;
+	
 	}
 	.sparkline-body {
 		padding: 0;
 		margin: 0 !important;
-	    line-height: 7rem;
+	  
 	}
 }
 
