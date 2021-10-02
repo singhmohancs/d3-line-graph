@@ -142,7 +142,7 @@ body {
 	align-items: center;
 	background: #bbf4eb;
 	border-radius: 2.8125rem;
-	padding:1rem 0.5rem ;
+	
 
 	
 }
@@ -157,13 +157,13 @@ body {
 
 .sparkline-body {
 	display: flex;
-	line-height: 0.7;
+
   text-shadow: 3px 10px 8px rgb(19 29 29);
   background: linear-gradient( 
     45deg, rgb(27 39 38 / 77%) 50%, rgb(76 101 98) 77%, rgb(43 56 55) 100%);
 	-webkit-background-clip: text !important;
 	-webkit-text-fill-color: transparent;
-  padding-bottom: 1rem;
+ 
 	background-clip: text !important;
   font-family: 'Calibri';
 }
@@ -173,19 +173,20 @@ body {
 	font-size: 2rem;
   text-shadow: 1px 0px 1px rgb(53 72 70);
   background: linear-gradient(45deg, rgb(20 30 30) 100%, rgb(19 29 29) 100%, rgb(43 56 55) 100%);
-  padding-top: 1rem;
+
   -webkit-background-clip: text !important;
   background-clip: text !important;
 	-webkit-text-fill-color: transparent;
 	display: flex;
     justify-content: flex-end;
-	line-height: normal;
+	line-height: 2em;
   
 }
 
 .sparkline-report-info {
 	display: flex;
 	flex-direction: column;
+	line-height: 0.8em;
  
 }
 
@@ -218,7 +219,7 @@ body {
 	}
 	.sparkline-date-info {
 		font-size: 1.2rem !important;
-    padding-top: 0.6rem !important;
+    
 	}
 	.team-1 {
 		top: 3rem
