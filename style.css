@@ -142,7 +142,7 @@ body {
 	align-items: center;
 	background: #bbf4eb;
     border-radius: 2rem;
-    padding:0.730rem 0.5rem  ;
+    padding:0.730rem  ;
 	
 
 	
@@ -193,6 +193,7 @@ body {
 
  
 }
+
 .sparkline-report-info h1{
 	font-size: 13rem;
 	margin: 0;
