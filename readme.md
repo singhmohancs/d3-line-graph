@@ -9,4 +9,4 @@
 
 1. make changes in `data.json` file if you need.
 2. start server by running `npm run start`
-3. run `npm run screenshot` command. that will generate example.png image.
+3. run `npm run screenshot` command. that will generate `example.jpg` image.
