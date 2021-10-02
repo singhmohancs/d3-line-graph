@@ -25,7 +25,7 @@
     doc.querySelector('.sparkline-text').style.backgroundColor = backgroundColor
     doc.querySelector(
       '#moneyLine',
-    ).innerHTML = `${moneyLine}<div class="sparkline-date-info" id="dateString">${dateString}</div>`
+    ).innerHTML = `<h1>${moneyLine}</h1><div class="sparkline-date-info" id="dateString">${dateString}</div>`
   }
   /**
    * Draw graph line
