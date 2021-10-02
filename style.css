@@ -141,11 +141,13 @@ body {
 	display: flex;
 	align-items: center;
 	background: #bbf4eb;
-	border-radius: 2.8125rem;
+    border-radius: 4rem;
+    padding:0.730rem ;
 	
 
 	
 }
+
 
 .sparklin-text h3 {
 	margin: 0;
@@ -179,14 +181,15 @@ body {
 	-webkit-text-fill-color: transparent;
 	display: flex;
     justify-content: flex-end;
-	line-height: 2em;
+	line-height: normal;
+    padding-top: 0.5em;
   
 }
 
 .sparkline-report-info {
 	display: flex;
 	flex-direction: column;
-	line-height: 0.8em;
+	line-height: 0.7em;
  
 }
 
